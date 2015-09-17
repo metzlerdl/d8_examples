@@ -1,0 +1,14 @@
+fapi_example.description:
+  path: 'examples/fapi_example'
+  defaults:
+    _controller:  '\Drupal\fapi_example\Controller\Page::description'
+    _title: 'Form Examples'
+  requirements:
+    _access: 'TRUE'
+fapi_example.simple_form:
+  path: 'examples/fapi_example/simple_form'
+  defaults:
+    _form:  '\Drupal\fapi_example\Form\SimpleForm'
+    _title: 'Simple Form Example'
+  requirements:
+    _access: 'TRUE'

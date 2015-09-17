@@ -1,0 +1,5 @@
+name: Form API Example (metzlerl Github)
+type: module
+description: 2015 PNW Drupal Summit Form Api Examples
+package: Example modules
+core: 8.x
