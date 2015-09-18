@@ -16,6 +16,6 @@ fapi_example.input_demo:
   path: 'examples/fapi_example/input_demo'
   defaults:
     _form:  '\Drupal\fapi_example\Form\InputDemo'
-    _title: 'Demo of common input controls'
+    _title: 'Demo of Common Input Elements'
   requirements:
     _access: 'TRUE'

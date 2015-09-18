@@ -98,6 +98,7 @@ class InputDemo extends FormBase {
         'blue' => $this->t('Blue'),
         'green' => $this->t('Green')
       ),
+      '#description' => $this->t('Select, #type = select'),
     );
 
     // Tel
@@ -114,15 +115,16 @@ class InputDemo extends FormBase {
     $form['text'] = array(
       '#type' => 'textarea',
       '#title' => $this->t('Text'),
-      '#description' => $this->t('Description')
+      '#description' => $this->t('Textarea, #type = textarea')
     );
 
     // Textfield
-    $form['title'] = array(
+    $form['subject'] = array(
       '#type' => 'textfield',
       '#title' => t('Subject'),
       '#size' => 60,
       '#maxlength' => 128,
+      '#description' => $this->t('Textfield, #type = textfield'),
     );
 
     // Weight
@@ -130,6 +132,7 @@ class InputDemo extends FormBase {
       '#type' => 'weight',
       '#title' => t('Weight'),
       '#delta' => 10,
+      '#description' => $this->t('Weight, #type = weight')
     );
 
 
@@ -144,6 +147,7 @@ class InputDemo extends FormBase {
     $form['actions']['submit'] = array(
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
+      '#description' => $this->t('Submit, #type = submit')
     );
 
 
