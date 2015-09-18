@@ -12,3 +12,10 @@ fapi_example.simple_form:
     _title: 'Simple Form Example'
   requirements:
     _access: 'TRUE'
+fapi_example.input_demo:
+  path: 'examples/fapi_example/input_demo'
+  defaults:
+    _form:  '\Drupal\fapi_example\Form\InputDemo'
+    _title: 'Demo of common input controls'
+  requirements:
+    _access: 'TRUE'

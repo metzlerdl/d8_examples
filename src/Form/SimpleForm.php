@@ -72,7 +72,7 @@ class SimpleForm extends FormBase {
    *   The unique ID of the form defined by this class.
    */
   public function getFormId() {
-    return 'form_example_simple_form';
+    return 'fapi_example_simple_form';
   }
 
   /**

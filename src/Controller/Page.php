@@ -23,7 +23,8 @@ class Page extends ControllerBase {
     $content['links'] = array(
       '#theme' => 'item_list',
       '#items' => array(
-        $this->l($this->t('Simple Form'), new Url('form_example.simple_form')),
+        $this->l($this->t('Simple Form'), new Url('fapi_example.simple_form')),
+        $this->l($this->t('Input Demo'), new Url('fapi_example.input_demo')),
       ),
     );
     return $content;
