@@ -23,7 +23,7 @@ class InputDemo extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     // CheckBoxes
-    $form['high_school']['tests_taken'] = array(
+    $form['tests_taken'] = array(
       '#type' => 'checkboxes',
       '#options' => array('SAT' => t('SAT'), 'ACT' => t('ACT')),
       '#title' => $this->t('What standardized tests did you take?'),
@@ -74,6 +74,15 @@ class InputDemo extends FormBase {
       '#description' => $this->t('PasswordConfirm, #type = password_confirm')
     );
 
+    // Range
+    $form['size'] = array(
+      '#type' => 'range',
+      '#title' => t('Size'),
+      '#min' => 10,
+      '#max' => 100,
+      '#discription' => $this->t('Range, #type = range'),
+    );
+
     // Radios
     $form['settings']['active'] = array(
       '#type' => 'radios',
@@ -98,6 +107,7 @@ class InputDemo extends FormBase {
         'blue' => $this->t('Blue'),
         'green' => $this->t('Green')
       ),
+      '#empty_option' => $this->t('-select-'),
       '#description' => $this->t('Select, #type = select'),
     );
 
@@ -167,7 +177,21 @@ class InputDemo extends FormBase {
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    //Place demo forms.
+    //Find out what was submitted
+    $values = $form_state->getValues();
+    foreach($values  as $key => $value) {
+      $label = $form[$key]['#title'];
+
+      // many arrays return 0 for unselected values so lets filter that out.
+      if (is_array($value)) $value = array_filter($value);
+
+      // Only display for controls that have titles and values.
+      if ($value && $label ) {
+        $display_value = is_array($value) ? print_r($value, 1) : $value;
+        $message = $this->t('Value for %title: %value' , array('%title' => $label, '%value' => $display_value));
+        drupal_set_message($message);
+      }
+    }
   }
 
 }
