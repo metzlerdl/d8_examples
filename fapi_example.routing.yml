@@ -4,18 +4,25 @@ fapi_example.description:
     _controller:  '\Drupal\fapi_example\Controller\Page::description'
     _title: 'Form Examples'
   requirements:
-    _access: 'TRUE'
+    _permission: 'access content'
 fapi_example.simple_form:
   path: 'examples/fapi_example/simple_form'
   defaults:
     _form:  '\Drupal\fapi_example\Form\SimpleForm'
     _title: 'Simple Form Example'
   requirements:
-    _access: 'TRUE'
+    _permission: 'access content'
 fapi_example.input_demo:
   path: 'examples/fapi_example/input_demo'
   defaults:
     _form:  '\Drupal\fapi_example\Form\InputDemo'
     _title: 'Demo of Common Input Elements'
   requirements:
-    _access: 'TRUE'
+    _permission: 'access content'
+fapi_example.state_demo:
+  path: 'examples/fapi_example/state_demo'
+  defaults:
+    _form:  '\Drupal\fapi_example\Form\StateDemo'
+    _title: 'Demo of Common Input Elements'
+  requirements:
+    _permission: 'access content'
