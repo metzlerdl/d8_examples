@@ -3,9 +3,3 @@ fapi_example.description:
   title: From API Examples
   description: Form examples using Drupal Form API.
   route_name: form_example.description
-
-fapi_example.simple_form:
-  title: Simple Form Example
-  description: A simple form example with submit processing.
-  route_name: form_example.simple_form
-  parent: form_example.description

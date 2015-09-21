@@ -26,3 +26,10 @@ fapi_example.state_demo:
     _title: 'Demo of Common Input Elements'
   requirements:
     _permission: 'access content'
+fapi_example.modal_form:
+  path: 'examples/fapi_example/modal_form'
+  defaults:
+    _form:  '\Drupal\fapi_example\Form\ModalForm'
+    _title: 'Modal Form Example'
+  requirements:
+    _permission: 'access content'

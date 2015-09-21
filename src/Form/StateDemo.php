@@ -11,6 +11,7 @@ namespace Drupal\fapi_example\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
+
 /**
  * Implements the SimpleForm form controller.
  *
@@ -28,33 +29,33 @@ class StateDemo extends DemoBase {
    * @inheritdoc
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['needs_accommodation'] = array(
+    $form['needs_accommodation'] = [
       '#type' => 'checkbox',
       '#title' => 'Need Special Accommodations?',
-    );
+    ];
 
-    $form['accommodation'] = array(
+    $form['accommodation'] = [
      '#type' => 'container',
-     '#attributes' => array(
+     '#attributes' => [
        'class' => 'accommodation',
-     ),
-     '#states' => array(
-       'invisible' => array(
+     ],
+     '#states' => [
+       'invisible' => [
          'input[name="needs_accommodation"]' => array('checked' => FALSE),
-       ),
-     ),
-   );
+       ],
+     ],
+   ];
 
-   $form['accommodation']['diet'] = array(
+   $form['accommodation']['diet'] = [
      '#type' => 'textfield',
      '#title' => t('Dietary Restrictions'),
-   );
+   ];
 
     // Add a submit button that handles the submission of the form.
-    $form['actions']['submit'] = array(
+    $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
-    );
+    ];
 
     return $form;
   }
@@ -80,5 +81,6 @@ class StateDemo extends DemoBase {
       drupal_set_message($this->t('Dietary Restriction Requested: %diet'), array('%diet' => $values['diet']));
     }
   }
+
 
 }
