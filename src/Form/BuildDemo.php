@@ -54,18 +54,18 @@ class BuildDemo extends FormBase {
     // Add a submit button that handles the submission of the form.
     $form['actions']['submit'] = array(
       '#type' => 'submit',
-      '#value' => $this->t('Submit'),
+      '#value' => 'Submit',
     );
 
     $form['actions']['rebuild'] = array(
       '#type' => 'submit',
-      '#value' => $this->t('Rebuild'),
+      '#value' => 'Rebuild',
       '#submit' => ['::rebuildFormSubmit']
     );
 
     $form['actions']['ajaxsubmit'] = array(
       '#type' => 'submit',
-      '#value' => $this->t('Ajax Submit'),
+      '#value' => 'Ajax Submit',
       '#ajax' => [
         'callback' => '::ajaxSubmit',
         'wrapper' => 'message-wrapper',
@@ -76,6 +76,8 @@ class BuildDemo extends FormBase {
       '#type' => 'container',
       '#attributes' => ['id' => 'message-wrapper']
     );
+
+
 
 
 
@@ -144,6 +146,7 @@ class BuildDemo extends FormBase {
     $form['messages']['status'] = [
       '#type' => 'status_messages',
     ];
+
     return $form['messages'];
   }
 

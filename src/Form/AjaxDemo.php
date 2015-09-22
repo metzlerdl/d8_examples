@@ -62,6 +62,7 @@ class AjaxDemo extends DemoBase {
         'wrapper' => 'color-wrapper',
       ]
     ];
+    $form_state->setCached(FALSE);
 
     $form['actions'] =[
       '#type' => 'actions',
@@ -79,8 +80,6 @@ class AjaxDemo extends DemoBase {
       '#attributes' => ['id' => 'color-wrapper']
     ];
 
-    $this->colorCallback($form, $form_state);
-
     return $form;
   }
 
@@ -96,15 +95,14 @@ class AjaxDemo extends DemoBase {
   /**
    * Callback for Ajax event on color selection.
    */
-  public function colorCallback(array $form, FormStateInterface $form_state) {
+  public function colorCallback(array &$form, FormStateInterface $form_state) {
     $temperature = $form_state->getValue('temperature');
-    if ($temperature) {
-      $form['color_wrapper']['color'] = [
-        '#type' => 'select',
-        '#title' => $this->t('Color'),
-        '#options' => $this->colors[$temperature],
-      ];
-    }
+    $form['color_wrapper']['color'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Color'),
+      '#options' => $this->colors[$temperature],
+    ];
+    $form_state->setRebuild();
     return $form['color_wrapper'];
   }
 
