@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: metzlerd
- * Date: 9/17/15
- * Time: 8:25 PM
+ * Input Element Demo
  */
 
 namespace Drupal\fapi_example\Form;

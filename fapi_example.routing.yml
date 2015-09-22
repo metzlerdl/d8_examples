@@ -5,6 +5,7 @@ fapi_example.description:
     _title: 'Form Examples'
   requirements:
     _permission: 'access content'
+
 fapi_example.simple_form:
   path: 'examples/fapi_example/simple_form'
   defaults:
@@ -12,6 +13,7 @@ fapi_example.simple_form:
     _title: 'Simple Form Example'
   requirements:
     _permission: 'access content'
+
 fapi_example.input_demo:
   path: 'examples/fapi_example/input_demo'
   defaults:
@@ -19,6 +21,7 @@ fapi_example.input_demo:
     _title: 'Demo of Common Input Elements'
   requirements:
     _permission: 'access content'
+
 fapi_example.state_demo:
   path: 'examples/fapi_example/state_demo'
   defaults:
@@ -26,10 +29,27 @@ fapi_example.state_demo:
     _title: 'Demo of Form State Binding'
   requirements:
     _permission: 'access content'
+
 fapi_example.modal_form:
   path: 'examples/fapi_example/modal_form'
   defaults:
     _form:  '\Drupal\fapi_example\Form\ModalForm'
     _title: 'Modal Form Example'
+  requirements:
+    _permission: 'access content'
+
+fapi_example.ajax_demo:
+  path: 'examples/fapi_example/ajax_demo'
+  defaults:
+    _form:  '\Drupal\fapi_example\Form\AjaxDemo'
+    _title: 'Ajax Form Example'
+  requirements:
+    _permission: 'access content'
+
+fapi_example.build_demo:
+  path: 'examples/fapi_example/build_demo'
+  defaults:
+    _form:  '\Drupal\fapi_example\Form\BuildDemo'
+    _title: 'Build Form Demo'
   requirements:
     _permission: 'access content'

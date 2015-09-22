@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains Drupal\form_example\Form\SimpleForm.
+ * Contains Drupal\fapi_example\Form\ModalForm.
  */
 
 namespace Drupal\fapi_example\Form;

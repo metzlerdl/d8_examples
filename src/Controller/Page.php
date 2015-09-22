@@ -30,15 +30,17 @@ class Page extends ControllerBase {
         $this->l($this->t('Simple Form'), new Url('fapi_example.simple_form')),
         $this->l($this->t('Input Demo'), new Url('fapi_example.input_demo')),
         $this->l($this->t('Form State Example'), new URL('fapi_example.state_demo')),
+        $this->l($this->t('Ajax Demo'), new URL('fapi_example.ajax_demo')),
         [
           '#type' => 'link',
           '#title' => $this->t('Modal Example'),
+          '#url' => new Url('fapi_example.modal_form'),
           '#attributes' => [
             'class' => ['use-ajax'],
             'data-dialog-type' => 'modal',
-          ],
-          '#url' => new URL('fapi_example.modal_form'),
+            ]
         ],
+        $this->l($this->t('Build Demo'), new URL('fapi_example.build_demo')),
       ],
     ];
     $content['message'] = [
