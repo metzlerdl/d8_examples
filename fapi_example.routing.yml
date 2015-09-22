@@ -23,7 +23,7 @@ fapi_example.state_demo:
   path: 'examples/fapi_example/state_demo'
   defaults:
     _form:  '\Drupal\fapi_example\Form\StateDemo'
-    _title: 'Demo of Common Input Elements'
+    _title: 'Demo of Form State Binding'
   requirements:
     _permission: 'access content'
 fapi_example.modal_form:
