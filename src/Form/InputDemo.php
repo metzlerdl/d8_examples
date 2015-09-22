@@ -119,7 +119,24 @@ class InputDemo extends FormBase {
     );
 
     // TableSelect
-    //@TODO: Get Tableselect sample.
+    $options = [
+      1 => ['first_name' => 'Indy', 'last_name' => 'Jones'],
+      2 => ['first_name' => 'Darth', 'last_name' => 'Vader'],
+      3 => [ 'first_name' => 'Super', 'last_name' => 'Man'],
+    ];
+
+    $header = array(
+      'first_name' => t('First Name'),
+      'last_name' => t('Last Name'),
+    );
+
+    $form['table'] = array(
+      '#type' => 'tableselect',
+      '#title' => $this->t('Users'),
+      '#header' => $header,
+      '#options' => $options,
+      '#empty' => t('No users found'),
+    );
 
     // Textarea
     $form['text'] = array(
