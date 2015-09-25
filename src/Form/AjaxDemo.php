@@ -37,17 +37,6 @@ class AjaxDemo extends DemoBase {
 
   /**
    * Build the simple form.
-   *
-   * A build form method constructs an array that defines how markup and
-   * other form elements are included in an HTML form.
-   *
-   * @param array $form
-   *   Default form array structure.
-   * @param FormStateInterface $form_state
-   *   Object containing current form state.
-   *
-   * @return array
-   *   The render array defining the elements of the form.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 

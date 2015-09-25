@@ -7,6 +7,7 @@ namespace Drupal\fapi_example\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 class InputDemo extends FormBase {
 
   /**
@@ -167,6 +168,20 @@ class InputDemo extends FormBase {
       '#type' => 'actions',
     );
 
+    // Extra actions for the display
+    $form['actions']['extra_actions'] = array(
+      '#type' => 'dropbutton',
+      '#links' => array(
+        'simple_form' => array(
+          'title' => $this->t('Simple Form'),
+          'url' => Url::fromRoute('fapi_example.simple_form'),
+        ),
+        'demo' => array(
+          'title' => $this->t('Build Demo'),
+          'url' => Url::fromRoute('fapi_example.build_demo'),
+        ),
+      ),
+    );
     // Add a submit button that handles the submission of the form.
     $form['actions']['submit'] = array(
       '#type' => 'submit',
