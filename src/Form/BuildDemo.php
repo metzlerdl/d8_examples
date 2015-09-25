@@ -84,10 +84,6 @@ class BuildDemo extends FormBase {
       '#attributes' => ['id' => 'message-wrapper']
     );
 
-
-
-
-
     return $form;
   }
 
