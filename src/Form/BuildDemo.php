@@ -57,9 +57,16 @@ class BuildDemo extends FormBase {
       '#value' => 'Submit',
     );
 
-    $form['actions']['rebuild'] = array(
-      '#type' => 'submit',
+
+    // Add button handlers.
+    $form['actions']['button'] = array(
+      '#type' => 'button',
       '#value' => 'Rebuild',
+    );
+
+    $form['actions']['rebuild'] = array(
+      '#type' => 'button',
+      '#value' => 'Submit Rebuild',
       '#submit' => ['::rebuildFormSubmit']
     );
 
