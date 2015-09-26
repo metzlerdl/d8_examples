@@ -31,7 +31,10 @@ class BuildDemo extends FormBase {
   }
 
   /**
-   * Build the simple form.
+   * Build form demonstration.
+   *
+   * This form demonstrates the different type of build form events and their
+   * order of firing.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
@@ -39,7 +42,7 @@ class BuildDemo extends FormBase {
     $i++;
     drupal_set_message("buildForm $i");
 
-    $form['chnage'] = [
+    $form['change'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Change Me'),
       '#ajax' => [
