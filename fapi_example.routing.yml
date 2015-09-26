@@ -30,6 +30,14 @@ fapi_example.state_demo:
   requirements:
     _permission: 'access content'
 
+fapi_example.container_demo:
+  path: 'examples/fapi_example/container_demo'
+  defaults:
+    _form:  '\Drupal\fapi_example\Form\ContainerDemo'
+    _title: 'Container Demo'
+  requirements:
+    _permission: 'access content'
+
 fapi_example.modal_form:
   path: 'examples/fapi_example/modal_form'
   defaults:
@@ -53,3 +61,4 @@ fapi_example.build_demo:
     _title: 'Build Form Demo'
   requirements:
     _permission: 'access content'
+

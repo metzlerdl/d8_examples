@@ -27,10 +27,11 @@ class Page extends ControllerBase {
     $content['links'] = [
       '#theme' => 'item_list',
       '#items' => [
-        $this->l($this->t('Simple Form'), new Url('fapi_example.simple_form')),
-        $this->l($this->t('Input Demo'), new Url('fapi_example.input_demo')),
-        $this->l($this->t('Form State Example'), new URL('fapi_example.state_demo')),
-        $this->l($this->t('Ajax Demo'), new URL('fapi_example.ajax_demo')),
+        $this->l($this->t('Simple Form'), Url::fromRoute('fapi_example.simple_form')),
+        $this->l($this->t('Input Demo'), Url::fromRoute('fapi_example.input_demo')),
+        $this->l($this->t('Form State Example'), Url::fromRoute('fapi_example.state_demo')),
+        $this->l($this->t('Container Demo'), Url::fromRoute('fapi_example.container_demo')),
+        $this->l($this->t('Ajax Demo'), Url::fromRoute('fapi_example.ajax_demo')),
         [
           '#type' => 'link',
           '#title' => $this->t('Modal Example'),
@@ -40,7 +41,7 @@ class Page extends ControllerBase {
             'data-dialog-type' => 'modal',
             ]
         ],
-        $this->l($this->t('Build Demo'), new URL('fapi_example.build_demo')),
+        $this->l($this->t('Build Demo'), Url::fromRoute('fapi_example.build_demo')),
       ],
     ];
     $content['message'] = [
