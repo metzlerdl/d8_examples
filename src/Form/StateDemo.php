@@ -70,7 +70,7 @@ class StateDemo extends DemoBase {
   }
 
   /**
-   * Build the form.
+   * Implements submitForm callback.
    *
    * @inheritdoc
    */

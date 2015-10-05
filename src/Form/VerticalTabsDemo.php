@@ -21,7 +21,7 @@ use Drupal\Core\Form\FormStateInterface;
  * @see \Drupal\Core\Form\FormBase
  * @see \Drupal\Core\Form\ConfigFormBase
  */
-class ContainerDemo extends DemoBase {
+class VerticalTabsDemo extends DemoBase {
 
   /**
    * Build the simple form.
@@ -29,50 +29,6 @@ class ContainerDemo extends DemoBase {
    * @inheritdoc
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['author'] = [
-        '#type' => 'details',
-        '#title' => 'Author Info (type = details)',
-    ];
-
-    $form['author']['name'] = [
-     '#type' => 'textfield',
-     '#title' => $this->t('Name'),
-    ];
-
-    $form['author']['pen_name'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Pen Name')
-    ];
-
-    $form['book'] = [
-      '#type' => 'fieldset',
-      '#title' => $this->t('Book Info (type = fieldset)'),
-    ];
-
-    $form['book']['title'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Title'),
-    ];
-
-    $form['book']['publisher'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Publisher'),
-    ];
-
-    $form['accomodation'] = [
-      '#type' => 'container',
-    ];
-
-    $form['accomodation']['title'] = [
-      '#type' => 'html_tag',
-      '#tag' => 'p',
-      '#value' => $this->t('Special Accomodations (type = container)'),
-    ];
-
-    $form['accomodation'] ['diet'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Dietary Restrictions'),
-    ];
 
     $form['information'] = array(
       '#type' => 'vertical_tabs',
@@ -117,8 +73,7 @@ class ContainerDemo extends DemoBase {
    * @inheritdoc
    */
   public function getFormId() {
-    return 'fapi_example_container_demo';
+    return 'fapi_example_vertical_tabs_demo';
   }
-
 
 }

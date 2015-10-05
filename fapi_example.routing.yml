@@ -38,6 +38,14 @@ fapi_example.container_demo:
   requirements:
     _permission: 'access content'
 
+fapi_example.vertical_tabs_demo:
+  path: 'examples/fapi_example/vertical_tabs_demo'
+  defaults:
+    _form:  '\Drupal\fapi_example\Form\VerticalTabsDemo'
+    _title: 'VerticalTabs Demo'
+  requirements:
+    _permission: 'access content'
+
 fapi_example.modal_form:
   path: 'examples/fapi_example/modal_form'
   defaults:

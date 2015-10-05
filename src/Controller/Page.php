@@ -31,6 +31,7 @@ class Page extends ControllerBase {
         $this->l($this->t('Input Demo'), Url::fromRoute('fapi_example.input_demo')),
         $this->l($this->t('Form State Example'), Url::fromRoute('fapi_example.state_demo')),
         $this->l($this->t('Container Demo'), Url::fromRoute('fapi_example.container_demo')),
+        $this->l($this->t('Veritcal Tab Demo'), Url::fromRoute('fapi_example.vertical_tabs_demo')),
         $this->l($this->t('Ajax Demo'), Url::fromRoute('fapi_example.ajax_demo')),
         [
           '#type' => 'link',
