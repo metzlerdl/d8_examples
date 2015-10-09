@@ -74,33 +74,6 @@ class ContainerDemo extends DemoBase {
       '#title' => $this->t('Dietary Restrictions'),
     ];
 
-    $form['information'] = array(
-      '#type' => 'vertical_tabs',
-      '#default_tab' => 'edit-publication',
-    );
-
-   $form['author'] = array(
-     '#type' => 'details',
-     '#title' => 'Author',
-     '#group' => 'information',
-   );
-
-   $form['author']['name'] = array(
-     '#type' => 'textfield',
-     '#title' => t('Name'),
-   );
-
-   $form['publication'] = array(
-     '#type' => 'details',
-     '#title' => t('Publication'),
-     '#group' => 'information',
-   );
-
-   $form['publication']['publisher'] = array(
-     '#type' => 'textfield',
-     '#title' => t('Publisher'),
-   );
-
     $form['actions'] = ['#type' => 'actions'];
     // Add a submit button that handles the submission of the form.
     $form['actions']['submit'] = [
