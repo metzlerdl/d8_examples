@@ -2,4 +2,4 @@
 fapi_example.description:
   title: From API Examples
   description: Form examples using Drupal Form API.
-  route_name: form_example.description
+  route_name: fapi_example.description
