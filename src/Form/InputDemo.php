@@ -21,100 +21,100 @@ class InputDemo extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     // CheckBoxes
-    $form['tests_taken'] = array(
+    $form['tests_taken'] = [
       '#type' => 'checkboxes',
-      '#options' => array('SAT' => t('SAT'), 'ACT' => t('ACT')),
+      '#options' => ['SAT' => t('SAT'), 'ACT' => t('ACT')],
       '#title' => $this->t('What standardized tests did you take?'),
       '#description' => 'Checkboxes, #type = checkboxes',
-    );
+    ];
 
     // Color
-    $form['color'] = array(
+    $form['color'] = [
       '#type' => 'color',
       '#title' => $this->t('Color'),
       '#default_value' => '#ffffff',
       '#description' => 'Color, #type = color',
-    );
+    ];
 
     // Date
-    $form['expiration'] = array(
+    $form['expiration'] = [
       '#type' => 'date',
       '#title' => $this->t('Content expiration'),
-      '#default_value' => array('year' => 2020, 'month' => 2, 'day' => 15,),
+      '#default_value' => ['year' => 2020, 'month' => 2, 'day' => 15,],
       '#description' => 'Date, #type = date',
-    );
+    ];
 
     // Email
-    $form['email'] = array(
+    $form['email'] = [
       '#type' => 'email',
       '#title' => $this->t('Email'),
       '#description' => 'Email, #type = email',
-    );
+    ];
 
     // Number
-    $form['quantity'] = array(
+    $form['quantity'] = [
       '#type' => 'number',
       '#title' => t('Quantity'),
       'description' => $this->t('Number, #type = number'),
-    );
+    ];
 
     // Password
-    $form['password'] = array(
+    $form['password'] = [
       '#type' => 'password',
       '#title' => $this->t('Password'),
       '#description' => 'Password, #type = password',
-    );
+    ];
 
     // Password Confirm
-    $form['password_confirm'] = array(
+    $form['password_confirm'] = [
       '#type' => 'password_confirm',
       '#title' => $this->t('New Password'),
       '#description' => $this->t('PasswordConfirm, #type = password_confirm')
-    );
+    ];
 
     // Range
-    $form['size'] = array(
+    $form['size'] = [
       '#type' => 'range',
       '#title' => t('Size'),
       '#min' => 10,
       '#max' => 100,
       '#discription' => $this->t('Range, #type = range'),
-    );
+    ];
 
     // Radios
-    $form['settings']['active'] = array(
+    $form['settings']['active'] = [
       '#type' => 'radios',
       '#title' => t('Poll status'),
-      '#options' => array(0 => $this->t('Closed'), 1 => $this->t('Active')),
+      '#options' => [0 => $this->t('Closed'), 1 => $this->t('Active')],
       '#description' => $this->t('Radios, #type = radios'),
-    );
+    ];
 
     // Search
-    $form['search'] = array(
+    $form['search'] = [
       '#type' => 'search',
       '#title' => $this->t('Search'),
       '#description' => $this->t('Search, #type = search'),
-    );
+    ];
 
     // Select
-    $form['favorite'] = array(
+    $form['favorite'] = [
       '#type' => 'select',
       '#title' => $this->t('Favorite color'),
-      '#options' => array(
+      '#options' => [
         'red' => $this->t('Red'),
         'blue' => $this->t('Blue'),
         'green' => $this->t('Green')
-      ),
+      ],
       '#empty_option' => $this->t('-select-'),
       '#description' => $this->t('Select, #type = select'),
-    );
+    ];
 
     // Tel
-    $form['phone'] = array(
+    $form['phone'] = [
       '#type' => 'tel',
       '#title' => $this->t('Phone'),
       '#description' => $this->t('Tel, #type = tel'),
-    );
+    ];
 
     // TableSelect
     $options = [
@@ -123,71 +123,72 @@ class InputDemo extends FormBase {
       3 => [ 'first_name' => 'Super', 'last_name' => 'Man'],
     ];
 
-    $header = array(
+    $header = [
       'first_name' => t('First Name'),
       'last_name' => t('Last Name'),
-    );
+    ];
 
-    $form['table'] = array(
+    $form['table'] = [
       '#type' => 'tableselect',
       '#title' => $this->t('Users'),
       '#header' => $header,
       '#options' => $options,
       '#empty' => t('No users found'),
-    );
+    ];
 
     // Textarea
-    $form['text'] = array(
+    $form['text'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Text'),
       '#description' => $this->t('Textarea, #type = textarea')
-    );
+    ];
 
     // Textfield
-    $form['subject'] = array(
+    $form['subject'] = [
       '#type' => 'textfield',
       '#title' => t('Subject'),
       '#size' => 60,
       '#maxlength' => 128,
       '#description' => $this->t('Textfield, #type = textfield'),
-    );
+    ];
 
     // Weight
-    $form['weight'] = array(
+    $form['weight'] = [
       '#type' => 'weight',
       '#title' => t('Weight'),
       '#delta' => 10,
       '#description' => $this->t('Weight, #type = weight')
-    );
+    ];
 
 
     // Group submit handlers in an actions element with a key of "actions" so
     // that it gets styled correctly, and so that other modules may add actions
     // to the form.
-    $form['actions'] = array(
+    $form['actions'] = [
       '#type' => 'actions',
-    );
+    ];
 
     // Extra actions for the display
-    $form['actions']['extra_actions'] = array(
+    $form['actions']['extra_actions'] = [
       '#type' => 'dropbutton',
-      '#links' => array(
-        'simple_form' => array(
+      '#links' => [
+        'simple_form' => [
           'title' => $this->t('Simple Form'),
           'url' => Url::fromRoute('fapi_example.simple_form'),
-        ),
-        'demo' => array(
+        ],
+        'demo' => [
           'title' => $this->t('Build Demo'),
           'url' => Url::fromRoute('fapi_example.build_demo'),
-        ),
-      ),
-    );
+        ],
+      ],
+    ];
+
     // Add a submit button that handles the submission of the form.
-    $form['actions']['submit'] = array(
+    $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
       '#description' => $this->t('Submit, #type = submit')
-    );
+    ];
 
 
     return $form;

@@ -41,15 +41,15 @@ class DemoBase extends FormBase {
     // Group submit handlers in an actions element with a key of "actions" so
     // that it gets styled correctly, and so that other modules may add actions
     // to the form.
-    $form['actions'] = array(
+    $form['actions'] = [
       '#type' => 'actions',
-    );
+    ];
 
     // Add a submit button that handles the submission of the form.
-    $form['actions']['submit'] = array(
+    $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
-    );
+    ];
     return $form;
   }
 
@@ -104,7 +104,7 @@ class DemoBase extends FormBase {
       // Only display for controls that have titles and values.
       if ($value ) {
         $display_value = is_array($value) ? print_r($value, 1) : $value;
-        $message = $this->t('Value for %title: %value' , array('%title' => $label, '%value' => $display_value));
+        $message = $this->t('Value for %title: %value' , ['%title' => $label, '%value' => $display_value]);
         drupal_set_message($message);
       }
     }

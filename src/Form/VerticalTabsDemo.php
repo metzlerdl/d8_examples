@@ -30,32 +30,32 @@ class VerticalTabsDemo extends DemoBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
-    $form['information'] = array(
+    $form['information'] = [
       '#type' => 'vertical_tabs',
       '#default_tab' => 'edit-publication',
-    );
+    ];
 
-   $form['author'] = array(
+    $form['author'] = [
      '#type' => 'details',
      '#title' => 'Author',
      '#group' => 'information',
-   );
+    ];
 
-   $form['author']['name'] = array(
+    $form['author']['name'] = [
      '#type' => 'textfield',
      '#title' => t('Name'),
-   );
+    ];
 
-   $form['publication'] = array(
+    $form['publication'] = [
      '#type' => 'details',
      '#title' => t('Publication'),
      '#group' => 'information',
-   );
+    ];
 
-   $form['publication']['publisher'] = array(
+    $form['publication']['publisher'] = [
      '#type' => 'textfield',
      '#title' => t('Publisher'),
-   );
+    ];
 
     $form['actions'] = ['#type' => 'actions'];
     // Add a submit button that handles the submission of the form.

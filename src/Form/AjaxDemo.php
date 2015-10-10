@@ -58,10 +58,10 @@ class AjaxDemo extends DemoBase {
     ];
 
     // Add a submit button that handles the submission of the form.
-    $form['actions']['submit'] = array(
+    $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
-    );
+    ];
 
     //
     $form['color_wrapper'] = [

@@ -17,12 +17,13 @@ class Page extends ControllerBase {
    * Lists the examples provided by form_example.
    */
   public function description() {
+    // These libraries are required to facilitate the ajax modal form demo.
     $content['#attached']['library'][] = 'core/drupal.ajax';
     $content['#attached']['library'][] = 'core/drupal.dialog';
     $content['#attached']['library'][] = 'core/drupal.dialog.ajax';
-    $content['intro'] = array(
+    $content['intro'] = [
       '#markup' => '<p>' . $this->t('Form examples to demonstrate comment UI solutions using the Drupal Form API.') . '</p>',
-    );
+    ];
 
     $content['links'] = [
       '#theme' => 'item_list',
@@ -33,6 +34,8 @@ class Page extends ControllerBase {
         $this->l($this->t('Container Demo'), Url::fromRoute('fapi_example.container_demo')),
         $this->l($this->t('Veritcal Tab Demo'), Url::fromRoute('fapi_example.vertical_tabs_demo')),
         $this->l($this->t('Ajax Demo'), Url::fromRoute('fapi_example.ajax_demo')),
+        // The following array is a link generated using the Link element.
+        // Attributes are used by the core dialog libraries to invoke the modal.
         [
           '#type' => 'link',
           '#title' => $this->t('Modal Example'),
@@ -45,6 +48,8 @@ class Page extends ControllerBase {
         $this->l($this->t('Build Demo'), Url::fromRoute('fapi_example.build_demo')),
       ],
     ];
+    // The message container is used by the modal form example it is an empty
+    // tag that will be replaced by content.
     $content['message'] = [
       '#type' => 'html_tag',
       '#tag' => 'div',

@@ -50,42 +50,42 @@ class BuildDemo extends FormBase {
         'wrapper' => 'message-wrapper',
       ],
     ];
-    $form['actions'] = array(
+    $form['actions'] = [
       '#type' => 'actions',
-    );
+    ];
 
     // Add a submit button that handles the submission of the form.
-    $form['actions']['submit'] = array(
+    $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => 'Submit',
-    );
+    ];
 
 
     // Add button handlers.
-    $form['actions']['button'] = array(
+    $form['actions']['button'] = [
       '#type' => 'button',
       '#value' => 'Rebuild',
-    );
+    ];
 
-    $form['actions']['rebuild'] = array(
+    $form['actions']['rebuild'] = [
       '#type' => 'button',
       '#value' => 'Submit Rebuild',
       '#submit' => ['::rebuildFormSubmit']
-    );
+    ];
 
-    $form['actions']['ajaxsubmit'] = array(
+    $form['actions']['ajaxsubmit'] = [
       '#type' => 'submit',
       '#value' => 'Ajax Submit',
       '#ajax' => [
         'callback' => '::ajaxSubmit',
         'wrapper' => 'message-wrapper',
       ]
-    );
+    ];
 
-    $form['messages'] = array(
+    $form['messages'] = [
       '#type' => 'container',
       '#attributes' => ['id' => 'message-wrapper']
-    );
+    ];
 
     return $form;
   }

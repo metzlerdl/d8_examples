@@ -41,7 +41,7 @@ class StateDemo extends DemoBase {
      ],
      '#states' => [
        'invisible' => [
-         'input[name="needs_accommodation"]' => array('checked' => FALSE),
+         'input[name="needs_accommodation"]' => ['checked' => FALSE],
        ],
      ],
    ];
@@ -78,7 +78,7 @@ class StateDemo extends DemoBase {
     //Find out what was submitted
     $values = $form_state->getValues();
     if ($values['needs_accomodation']) {
-      drupal_set_message($this->t('Dietary Restriction Requested: %diet'), array('%diet' => $values['diet']));
+      drupal_set_message($this->t('Dietary Restriction Requested: %diet'), ['%diet' => $values['diet']]);
     }
   }
 
