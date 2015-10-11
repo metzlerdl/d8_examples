@@ -210,14 +210,14 @@ class InputDemo extends FormBase {
     //Find out what was submitted
     $values = $form_state->getValues();
     foreach($values  as $key => $value) {
-      $label = $form[$key]['#title'];
+      $label = isset($form[$key]['#title']) ? $form[$key]['#title'] : $key;
 
       // many arrays return 0 for unselected values so lets filter that out.
       if (is_array($value)) $value = array_filter($value);
 
       // Only display for controls that have titles and values.
       if ($value && $label ) {
-        $display_value = is_array($value) ? print_r($value, 1) : $value;
+        $display_value = is_array($value) ? preg_replace('/[\n\r\s]+/', ' ', print_r($value, 1)) : $value;
         $message = $this->t('Value for %title: %value' , array('%title' => $label, '%value' => $display_value));
         drupal_set_message($message);
       }
