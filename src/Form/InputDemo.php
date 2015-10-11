@@ -1,6 +1,8 @@
 <?php
 /**
- * Input Element Demo
+ * @file
+ *
+ * Contains Drupal\fapi_example\Form\InputDemo
  */
 
 namespace Drupal\fapi_example\Form;
@@ -8,6 +10,11 @@ namespace Drupal\fapi_example\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+
+/**
+ * Class InputDemo
+ * @package Drupal\fapi_example\Form
+ */
 class InputDemo extends FormBase {
 
   /**

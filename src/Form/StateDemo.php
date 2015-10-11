@@ -11,10 +11,9 @@ use Drupal\Core\Form\FormStateInterface;
 
 
 /**
- * Implements the SimpleForm form controller.
+ * Implements the state demo form controller.
  *
- * This class extends FormBase which is the simplest form base class used in
- * Drupal.
+ * The submit handler for this form is implemented by the DemoBase class.
  *
  * @see \Drupal\Core\Form\FormBase
  * @see \Drupal\Core\Form\ConfigFormBase

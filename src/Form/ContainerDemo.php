@@ -11,11 +11,9 @@ use Drupal\Core\Form\FormStateInterface;
 
 
 /**
- * Implements the SimpleForm form controller.
+ * Implements the container demo form.
  *
- * This class extends FormBase which is the simplest form base class used in
- * Drupal.
- *
+ * The submit handler in this form is provided by the DemoBase class.
  * @see \Drupal\Core\Form\FormBase
  * @see \Drupal\Core\Form\ConfigFormBase
  */
@@ -27,6 +25,8 @@ class ContainerDemo extends DemoBase {
    * @inheritdoc
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+
+    // Details containers replace collapsible field sets in D7.
     $form['author'] = [
         '#type' => 'details',
         '#title' => 'Author Info (type = details)',
@@ -42,6 +42,7 @@ class ContainerDemo extends DemoBase {
       '#title' => $this->t('Pen Name')
     ];
 
+    // Conventional field set.
     $form['book'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Book Info (type = fieldset)'),
@@ -57,6 +58,8 @@ class ContainerDemo extends DemoBase {
       '#title' => $this->t('Publisher'),
     ];
 
+    // Containers have no visual display but wrap any contained elements int a
+    // div tag.
     $form['accomodation'] = [
       '#type' => 'container',
     ];
@@ -72,6 +75,7 @@ class ContainerDemo extends DemoBase {
       '#title' => $this->t('Dietary Restrictions'),
     ];
 
+    // Convational submit button.
     $form['actions'] = ['#type' => 'actions'];
     // Add a submit button that handles the submission of the form.
     $form['actions']['submit'] = [

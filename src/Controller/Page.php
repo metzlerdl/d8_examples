@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains Drupal\form_example\Controller\Page.
+ * Contains Drupal\fapi_example\Controller\Page.
  */
 
 namespace Drupal\fapi_example\Controller;

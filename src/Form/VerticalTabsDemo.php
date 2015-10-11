@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains Drupal\fapi_example\Form\StateDemo.
+ * Contains Drupal\fapi_example\Form\VerticalTabsDemo.
  */
 
 namespace Drupal\fapi_example\Form;
@@ -11,7 +11,7 @@ use Drupal\Core\Form\FormStateInterface;
 
 
 /**
- * Implements the SimpleForm form controller.
+ * Implements the vertical tabs demo form controller.
  *
  * This class extends FormBase which is the simplest form base class used in
  * Drupal.
@@ -22,7 +22,7 @@ use Drupal\Core\Form\FormStateInterface;
 class VerticalTabsDemo extends DemoBase {
 
   /**
-   * Build the simple form.
+   * Build the form.
    *
    * @inheritdoc
    */

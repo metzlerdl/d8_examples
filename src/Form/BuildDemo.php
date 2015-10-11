@@ -2,9 +2,7 @@
 
 /**
  * @file
- * Contains Drupal\form_example\Form\SimpleForm.
- *
- * Sample form for demoing the order of the form process.
+ * Contains Drupal\fapi_example\Form\BuildDemo.
  */
 
 namespace Drupal\fapi_example\Form;
@@ -14,10 +12,11 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Implements the SimpleForm form controller.
+ * Implements the build demo form controller.
  *
- * This class extends FormBase which is the simplest form base class used in
- * Drupal.
+ * The form uses drupal_set_message() calls to demonstrate the order of
+ * contoller method invocations by the form api.  Note that currently there is
+ * no constructor in the FormBase class.
  *
  * @see \Drupal\Core\Form\FormBase
  * @see \Drupal\Core\Form\ConfigFormBase
@@ -25,6 +24,8 @@ use Drupal\Core\Form\FormStateInterface;
 class BuildDemo extends FormBase {
 
   public function __construct() {
+    // Static variables here are used to tell you how often these methods
+    // are called within a single page load.
     static $i=0;
     $i++;
     drupal_set_message("Constructor $i");

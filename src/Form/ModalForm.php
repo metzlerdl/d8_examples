@@ -99,6 +99,8 @@ class ModalForm extends FormBase {
     // At this point the submit handler has fired.
     // Clear the message set by the submit handler.
     drupal_get_messages();
+
+    // We begin building a new ajax reponse.
     $response = new AjaxResponse();
     if ($form_state->getErrors()) {
       unset($form['#prefix']);

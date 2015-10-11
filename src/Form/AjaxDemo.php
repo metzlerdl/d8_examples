@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains Drupal\form_example\Form\SimpleForm.
+ * Contains Drupal\fapi_example\Form\AjaxDemo.
  */
 
 namespace Drupal\fapi_example\Form;
@@ -10,10 +10,7 @@ namespace Drupal\fapi_example\Form;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Implements the SimpleForm form controller.
- *
- * This class extends FormBase which is the simplest form base class used in
- * Drupal.
+ * Implements the ajax demo form controller.
  *
  * @see \Drupal\Core\Form\FormBase
  * @see \Drupal\Core\Form\ConfigFormBase
@@ -34,7 +31,13 @@ class AjaxDemo extends DemoBase {
   ];
 
   /**
-   * Build the simple form.
+   * Build the AJAX demo form.
+   *
+   * The #ajax attribute used in the temperature input element defines an ajax
+   * callback that will invoke the colorCallback method on this form object.
+   * Whenever the temperature element changes, it will invoke this callback and
+   * replace the contents of the color_wrapper container with the reults of this
+   * method call.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
@@ -84,12 +87,13 @@ class AjaxDemo extends DemoBase {
    */
   public function colorCallback(array &$form, FormStateInterface $form_state) {
     $temperature = $form_state->getValue('temperature');
+
     $form['color_wrapper']['color'] = [
       '#type' => 'select',
       '#title' => $this->t('Color'),
       '#options' => $this->colors[$temperature],
     ];
-    $form_state->setRebuild();
+
     return $form['color_wrapper'];
   }
 
