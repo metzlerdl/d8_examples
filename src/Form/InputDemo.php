@@ -15,7 +15,7 @@ class InputDemo extends FormBase {
    * @param array $form
    *   Partially built form.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   Object representating the state of the form.
+   *   Object representing the state of the form.
    * @return array
    */
   public function buildForm(array $form, FormStateInterface $form_state) {

@@ -7,8 +7,6 @@
 
 namespace Drupal\fapi_example\Form;
 
-
-use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 
@@ -34,6 +32,8 @@ class StateDemo extends DemoBase {
       '#title' => 'Need Special Accommodations?',
     ];
 
+    // The #states property used here binds the visibility of the of the
+    // container element to the value of the needs_accomodation checkbox above.
     $form['accommodation'] = [
      '#type' => 'container',
      '#attributes' => [

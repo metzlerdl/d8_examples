@@ -7,8 +7,6 @@
 
 namespace Drupal\fapi_example\Form;
 
-
-use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
