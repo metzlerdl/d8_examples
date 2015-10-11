@@ -56,8 +56,7 @@ class Page extends ControllerBase {
     // The message container is used by the modal form example it is an empty
     // tag that will be replaced by content.
     $content['message'] = [
-      '#type' => 'html_tag',
-      '#tag' => 'div',
+      '#type' => 'container',
       '#attributes' => ['id' => 'fapi-example-message'],
     ];
     return $content;
