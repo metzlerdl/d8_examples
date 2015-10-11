@@ -60,17 +60,17 @@ class ContainerDemo extends DemoBase {
 
     // Containers have no visual display but wrap any contained elements int a
     // div tag.
-    $form['accomodation'] = [
+    $form['accommodation'] = [
       '#type' => 'container',
     ];
 
-    $form['accomodation']['title'] = [
+    $form['accommodation']['title'] = [
       '#type' => 'html_tag',
       '#tag' => 'p',
-      '#value' => $this->t('Special Accomodations (type = container)'),
+      '#value' => $this->t('Special Accommodations (type = container)'),
     ];
 
-    $form['accomodation'] ['diet'] = [
+    $form['accommodation'] ['diet'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Dietary Restrictions'),
     ];
