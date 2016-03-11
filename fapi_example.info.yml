@@ -1,5 +1,7 @@
-name: Form API Example (metzlerl Github)
+name: Form API Example
 type: module
-description: 2015 PNW Drupal Summit Form Api Examples
+description: Sample implementations that demonstrate the Drupal Forms API
 package: Example modules
 core: 8.x
+dependencies:
+  - examples

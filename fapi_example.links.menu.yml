@@ -1,6 +1,6 @@
 # Define default links for this module.
 fapi_example.description:
-  title: From API Examples
+  title: Form API Examples
   description: Form examples using Drupal Form API.
   route_name: fapi_example.description
 
@@ -42,6 +42,6 @@ fapi_example.ajax_demo:
 
 fapi_example.build_demo:
   title: Build Form Demo
-  description: A form build demonstration.
+  description: Demostrates the order of firing of from controller methods.
   route_name: fapi_example.build_demo
   parent: fapi_example.description

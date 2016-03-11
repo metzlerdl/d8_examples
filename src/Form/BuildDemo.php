@@ -14,35 +14,45 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Implements the build demo form controller.
  *
- * The form uses drupal_set_message() calls to demonstrate the order of
- * contoller method invocations by the form api.  Note that currently there is
- * no constructor in the FormBase class.
+ * This example uses drupal_set_message() calls to demonstrate the order of
+ * controller method invocations by the form api.
  *
  * @see \Drupal\Core\Form\FormBase
  * @see \Drupal\Core\Form\ConfigFormBase
  */
 class BuildDemo extends FormBase {
 
+  /**
+   * Counter keeping track of the sequence of method invocation.
+   * @var int
+   */
+  static $_sequence = 0;
+
+  /**
+   * {@inheritdoc}
+   */
   public function __construct() {
-    // Static variables here are used to tell you how often these methods
-    // are called within a single page load.
-    static $i=0;
-    $i++;
-    drupal_set_message("Constructor $i");
+    $this->displayMethodInvocation('__construct');
   }
 
   /**
-   * Build form demonstration.
+   * Display the method being called and it's sequence in the form
+   * processing.
    *
-   * This form demonstrates the different type of build form events and their
-   * order of firing.
+   * @param $method_name
+   *   The method being invoked.
+   */
+  private function displayMethodInvocation($method_name) {
+    self::$_sequence++;
+    drupal_set_message(self::$_sequence . ". $method_name");
+  }
+
+  /**
+   * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
-    static $i = 0;
-    $i++;
-    drupal_set_message("buildForm $i");
-
+    // Simple checkbox for ajax orders.
     $form['change'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Change Me'),
@@ -51,6 +61,7 @@ class BuildDemo extends FormBase {
         'wrapper' => 'message-wrapper',
       ],
     ];
+
     $form['actions'] = [
       '#type' => 'actions',
     ];
@@ -92,64 +103,35 @@ class BuildDemo extends FormBase {
   }
 
   /**
-   * Getter method for Form ID.
-   *
-   * The form ID is used in implementations of hook_form_alter() to allow other
-   * modules to alter the render array built by this form controller.  it must
-   * be unique site wide. It normally starts with the providing module's name.
-   *
-   * @return string
-   *   The unique ID of the form defined by this class.
+   * {@inheritdoc}
    */
   public function getFormId() {
-    static $i = 0;
-    $i++;
-    drupal_set_message("getFormId $i");
+    $this->displayMethodInvocation('getFormId');
     return 'fapi_example_simple_form';
   }
 
   /**
-   * Implements form validation.
-   *
-   * The validateForm method is the default method called to validate input on
-   * a form.
-   *
-   * @param array $form
-   *   The render array of the currently built form.
-   * @param FormStateInterface $form_state
-   *   Object describing the current state of the form.
+   * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    static $i = 0;
-    $i++;
-    drupal_set_message("validateForm $i");
+    $this->displayMethodInvocation('validateForm');
   }
 
   /**
-   * Implements a form submit handler.
-   *
-   * The submitForm method is the default method called for any submit elements.
-   *
-   * @param array $form
-   *   The render array of the currently built form.
-   * @param FormStateInterface $form_state
-   *   Object describing the current state of the form.
+   * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    static $i = 0;
-    $i++;
-    drupal_set_message("submitForm $i");
+    $this->displayMethodInvocation('submitForm');
   }
 
   /**
+   * Implements ajax submit callback.
+   *
    * @param array $form
    * @param \Drupal\Core\Form\FormStateInterface $form_state
-   * Demonstrates ajax button submit.
    */
   public function ajaxSubmit(array &$form, FormStateInterface $form_state) {
-    static $i = 0;
-    $i++;
-    drupal_set_message("ajaxSubmit $i");
+    $this->displayMethodInvocation('ajaxSubmit');
     $form['messages']['status'] = [
       '#type' => 'status_messages',
     ];
@@ -158,14 +140,15 @@ class BuildDemo extends FormBase {
   }
 
   /**
+   * Implements submit callback for Rebuild button.
+   *
    * @param array $form
+   *   Form render array
    * @param \Drupal\Core\Form\FormStateInterface $form_state
-   * Test a submit that causes form state rebuild
+   *   Current state of the form.
    */
   public function rebuildFormSubmit(array &$form, FormStateInterface $form_state) {
-    static $i = 0;
-    $i++;
-    drupal_set_message("rebuildFormSubmit $i");
+    $this->displayMethodInvocation('rebuildFormSubmit');
     $form_state->setRebuild(TRUE);
   }
 

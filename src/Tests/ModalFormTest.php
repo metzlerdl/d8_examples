@@ -20,7 +20,7 @@ use Drupal\simpletest\WebTestBase;
  *
  * @ingroup fapi_example
  */
-class ContainerDemoTest extends WebTestBase {
+class ModalFormTest extends WebTestBase {
 
   /**
    * Our module dependencies.
@@ -39,29 +39,22 @@ class ContainerDemoTest extends WebTestBase {
   /**
    * Test example forms provided by fapi_example.
    */
-  public function testContainerDemoForm() {
+  public function testModalForm() {
 
     // Test for a link to the simple_form example on the form_example page.
     $this->drupalGet('examples/fapi_example');
-    $this->assertLinkByHref('examples/fapi_example/container_demo');
+    $this->assertLinkByHref('examples/fapi_example/modal_form');
 
-    // Verify that anonymous can access the simpletest_examples page.
-    $this->drupalGet('examples/fapi_example/container_demo');
-    $this->assertResponse(200, 'The Demo of Container page is available.');
+    // Verify that anonymous can access the page.
+    $this->drupalGet('examples/fapi_example/modal_form');
+    $this->assertResponse(200, 'The Demo of Modal Form is available.');
 
     // Post the form.
     $edit = [
-      'name' => 'Dave',
-      'pen_name' => 'DMan',
       'title' => 'My Book',
-      'publisher' => 'me',
-      'diet' => 'vegan'
     ];
-    $this->drupalPostForm('/examples/fapi_example/container_demo', $edit, t('Submit'));
-    $this->assertText('Value for name: Dave');
-    $this->assertText('Value for pen_name: DMan');
-    $this->assertText('Value for title: My Book');
-    $this->assertText('Value for publisher: me');
-    $this->assertText('Value for diet: vegan');
+    $this->drupalPostForm('/examples/fapi_example/modal_form', $edit, t('Submit'));
+    $this->assertText('Submit handler: You specified a title of My Book.');
   }
+
 }

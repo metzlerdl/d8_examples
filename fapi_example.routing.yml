@@ -5,8 +5,8 @@
 # controllers the content is determined by the buildForm method defined by the
 # form controller implementation.
 
-# Access to these paths is restricted to users with the permission 'access content'.
-# This is notated as _permission: 'access content'.
+# Access to these paths is restricted to users with the permission
+# 'access content'. This is notated as _permission: 'access content'.
 
 # Menu items corresponding to these URLs are defined separately in the
 # fapi_example.links.menu.yml file.

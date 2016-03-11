@@ -9,24 +9,24 @@ namespace Drupal\fapi_example\Form;
 
 use Drupal\Core\Form\FormStateInterface;
 
-
 /**
  * Implements the container demo form.
  *
+ * This example demonstrates commonly used container elements in a form.
+ * Container elements are often used to group elements within a form.
+ *
  * The submit handler in this form is provided by the DemoBase class.
+ *
  * @see \Drupal\Core\Form\FormBase
- * @see \Drupal\Core\Form\ConfigFormBase
  */
 class ContainerDemo extends DemoBase {
 
   /**
-   * Build the simple form.
-   *
-   * @inheritdoc
+   * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
-    // Details containers replace collapsible field sets in D7.
+    // Details containers replace D7's collapsible field sets.
     $form['author'] = [
         '#type' => 'details',
         '#title' => 'Author Info (type = details)',
@@ -39,7 +39,7 @@ class ContainerDemo extends DemoBase {
 
     $form['author']['pen_name'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Pen Name')
+      '#title' => $this->t('Pen Name'),
     ];
 
     // Conventional field set.
@@ -58,7 +58,7 @@ class ContainerDemo extends DemoBase {
       '#title' => $this->t('Publisher'),
     ];
 
-    // Containers have no visual display but wrap any contained elements int a
+    // Containers have no visual display but wrap any contained elements in a
     // div tag.
     $form['accommodation'] = [
       '#type' => 'container',
@@ -70,14 +70,13 @@ class ContainerDemo extends DemoBase {
       '#value' => $this->t('Special Accommodations (type = container)'),
     ];
 
-    $form['accommodation'] ['diet'] = [
+    $form['accommodation']['diet'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Dietary Restrictions'),
     ];
 
-    // Convational submit button.
     $form['actions'] = ['#type' => 'actions'];
-    // Add a submit button that handles the submission of the form.
+    
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
@@ -87,13 +86,10 @@ class ContainerDemo extends DemoBase {
   }
 
   /**
-   * Getter method for Form ID.
-   *
    * @inheritdoc
    */
   public function getFormId() {
     return 'fapi_example_container_demo';
   }
-
 
 }

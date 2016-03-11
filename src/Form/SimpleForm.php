@@ -14,11 +14,10 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Implements the SimpleForm form controller.
  *
- * This class extends FormBase which is the simplest form base class used in
- * Drupal.
+ * This example demonstrates a simple form with a singe text input element. We
+ * extend FormBase which is the simplest form base class used in Drupal.
  *
  * @see \Drupal\Core\Form\FormBase
- * @see \Drupal\Core\Form\ConfigFormBase
  */
 class SimpleForm extends FormBase {
 
@@ -47,7 +46,7 @@ class SimpleForm extends FormBase {
 
     // Group submit handlers in an actions element with a key of "actions" so
     // that it gets styled correctly, and so that other modules may add actions
-    // to the form.
+    // to the form. This is not required, but is convention.
     $form['actions'] = [
       '#type' => 'actions',
     ];

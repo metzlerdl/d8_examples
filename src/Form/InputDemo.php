@@ -12,18 +12,15 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 
 /**
- * Class InputDemo
- * @package Drupal\fapi_example\Form
+ * Implements InputDemo form controller.
+ *
+ * This example demonstrates the different input elements that are used to
+ * collect data in a form.
  */
 class InputDemo extends FormBase {
 
   /**
-   * Form Building function.
-   * @param array $form
-   *   Partially built form.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   Object representing the state of the form.
-   * @return array
+   * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
@@ -62,7 +59,7 @@ class InputDemo extends FormBase {
     $form['quantity'] = [
       '#type' => 'number',
       '#title' => t('Quantity'),
-      'description' => $this->t('Number, #type = number'),
+      '#description' => $this->t('Number, #type = number'),
     ];
 
     // Password
@@ -85,7 +82,7 @@ class InputDemo extends FormBase {
       '#title' => t('Size'),
       '#min' => 10,
       '#max' => 100,
-      '#discription' => $this->t('Range, #type = range'),
+      '#description' => $this->t('Range, #type = range'),
     ];
 
     // Radios
@@ -202,16 +199,14 @@ class InputDemo extends FormBase {
   }
 
   /**
-   * The form ID as used in alter hooks.
+   * {@inheritdoc}
    */
   public function getFormId() {
     return 'fapi_example_input_demo_form';
   }
 
   /**
-   * @param array $form
-   *   The built version of the render array representing the form.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     //Find out what was submitted

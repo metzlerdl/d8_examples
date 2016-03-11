@@ -15,29 +15,20 @@ use Drupal\Core\Ajax\CloseModalDialogCommand;
 use Drupal\Core\Ajax\HtmlCommand;
 
 /**
- * Implements the SimpleForm form controller.
+ * Implements the ModalForm form controller.
  *
- * This class extends FormBase which is the simplest form base class used in
- * Drupal.
+ * This example demonstrates implementation of a form that is designed to be
+ * used as a modal form.  To properly display the modal the link presented by
+ * the \Drupal\fapi_example\Controller\Page page controller loads the Drupal
+ * dialog and ajax libraries.  The submit handler in this class returns ajax
+ * commands to replace text in the calling page after submission .
  *
  * @see \Drupal\Core\Form\FormBase
- * @see \Drupal\Core\Form\ConfigFormBase
  */
 class ModalForm extends FormBase {
 
   /**
-   * Build the simple form.
-   *
-   * A build form method constructs an array that defines how markup and
-   * other form elements are included in an HTML form.
-   *
-   * @param array $form
-   *   Default form array structure.
-   * @param FormStateInterface $form_state
-   *   Object containing current form state.
-   *
-   * @return array
-   *   The render array defining the elements of the form.
+   * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['#prefix'] = '<div id="fapi-example-modal-form">';
@@ -69,21 +60,14 @@ class ModalForm extends FormBase {
   }
 
   /**
-   * Getter method for Form ID.
-   *
-   * The form ID is used in implementations of hook_form_alter() to allow other
-   * modules to alter the render array built by this form controller.  it must
-   * be unique site wide. It normally starts with the providing module's name.
-   *
-   * @return string
-   *   The unique ID of the form defined by this class.
+   * {@inheritdoc}
    */
   public function getFormId() {
     return 'fapi_example_modal_form';
   }
 
   /**
-   * Implements the submit handler  case.
+   * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $title = $form_state->getValue('title');
@@ -93,6 +77,13 @@ class ModalForm extends FormBase {
 
   /**
    * Implements the sumbit handler for the ajax call.
+   *
+   * @param array $form
+   *   Render array representing from
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   Current form state.
+   * @return \Drupal\Core\Ajax\AjaxResponse
+   *   Array of ajax commands to execute on submit of the modal form.
    */
   public function ajaxSubmitForm(array &$form, FormStateInterface $form_state) {
 
