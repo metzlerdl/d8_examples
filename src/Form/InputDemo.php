@@ -79,6 +79,14 @@ class InputDemo extends FormBase {
       '#description' => 'Email, #type = email',
     ];
 
+    // Entity Autocomplete
+    $form['user'] = [
+      '#type' => 'entity_autocomplete',
+      '#title' => $this->t('User'),
+      '#target_type' => 'user',
+      '#description' => ' User, #type = entity_autocomplete',
+    ];
+
     // Number
     $form['quantity'] = [
       '#type' => 'number',
