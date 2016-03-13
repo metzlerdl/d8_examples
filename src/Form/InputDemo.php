@@ -79,13 +79,6 @@ class InputDemo extends FormBase {
       '#description' => 'Email, #type = email',
     ];
 
-    // Entity Autocomplete
-    $form['user'] = [
-      '#type' => 'entity_autocomplete',
-      '#title' => $this->t('User'),
-      '#target_type' => 'user',
-      '#description' => ' User, #type = entity_autocomplete',
-    ];
 
     // Number
     $form['quantity'] = [
@@ -196,6 +189,28 @@ class InputDemo extends FormBase {
       '#description' => $this->t('Weight, #type = weight')
     ];
 
+    // Item
+    $form['item_number'] = [
+      '#type' => 'item',
+      '#title' => $this->t('Item Number'),
+      '#description' => ('Item, #type=item'),
+      '#markup' => '3',
+    ];
+
+    // Entity Autocomplete
+    $form['user'] = [
+      '#type' => 'entity_autocomplete',
+      '#title' => $this->t('User'),
+      '#target_type' => 'user',
+      '#description' => ' User, #type = entity_autocomplete',
+    ];
+
+    // File
+    $form['file'] = [
+      '#type' => 'file',
+      '#title' => $this->t('File to Upload'),
+      '#description' => ('File, #type = File')
+    ];
 
     // Group submit handlers in an actions element with a key of "actions" so
     // that it gets styled correctly, and so that other modules may add actions
