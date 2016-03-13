@@ -209,7 +209,12 @@ class InputDemo extends FormBase {
     $form['file'] = [
       '#type' => 'file',
       '#title' => $this->t('File to Upload'),
-      '#description' => ('File, #type = File')
+      '#description' => ('File, #type = file')
+    ];
+
+    $form['language'] = [
+      '#type' => 'language_select',
+      '#title' => $this->t('Language, #type = language_select'),
     ];
 
     // Group submit handlers in an actions element with a key of "actions" so
@@ -239,6 +244,13 @@ class InputDemo extends FormBase {
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
       '#description' => $this->t('Submit, #type = submit')
+    ];
+
+    // Image button
+    $form['actions']['add'] = [
+      '#type' => 'image_button',
+      '#src' => 'core/themes/bartik/images/add.png',
+      '#value' => $this->t('Add')
     ];
 
 
