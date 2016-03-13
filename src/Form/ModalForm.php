@@ -76,7 +76,7 @@ class ModalForm extends FormBase {
   }
 
   /**
-   * Implements the sumbit handler for the ajax call.
+   * Implements the submit handler for the ajax call.
    *
    * @param array $form
    *   Render array representing from
@@ -91,7 +91,7 @@ class ModalForm extends FormBase {
     // Clear the message set by the submit handler.
     drupal_get_messages();
 
-    // We begin building a new ajax reponse.
+    // We begin building a new ajax response.
     $response = new AjaxResponse();
     if ($form_state->getErrors()) {
       unset($form['#prefix']);

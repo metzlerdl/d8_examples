@@ -7,6 +7,7 @@
 
 namespace Drupal\fapi_example\Form;
 
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
@@ -32,6 +33,7 @@ class InputDemo extends FormBase {
       '#description' => 'Checkboxes, #type = checkboxes',
     ];
 
+
     // Color
     $form['color'] = [
       '#type' => 'color',
@@ -40,12 +42,34 @@ class InputDemo extends FormBase {
       '#description' => 'Color, #type = color',
     ];
 
+    // Datelist
+    $form ['meeting_start']= [
+      '#type' => 'datelist',
+      '#title' => $this->t('Meeting Start'),
+      '#default_value' => new DrupalDateTime('2000-01-01 00:00:00'),
+      '#date_part_order' => ['month', 'day', 'year', 'hour', 'minute', 'ampm'],
+      '#date_text_parts' => ['year'],
+      '#date_year_range' => '2010:2020',
+      '#date_increment' => 15,
+    ];
+
     // Date
     $form['expiration'] = [
       '#type' => 'date',
-      '#title' => $this->t('Content expiration'),
+      '#title' => $this->t('Expiration'),
       '#default_value' => ['year' => 2020, 'month' => 2, 'day' => 15,],
       '#description' => 'Date, #type = date',
+    ];
+
+    // Date Time
+    $form ['event_start'] = [
+      '#type' => 'datetime',
+      '#title' => $this->t('Event Start'),
+      '#description' => 'Datetime, #type = datetime',
+      '#default_value' => new DrupalDateTime('2000-01-01 00:00:00'),
+      '#date_date_element' => 'date',
+      '#date_time_element' => 'time',
+      '#date_year_range' => '2010:+3',
     ];
 
     // Email
